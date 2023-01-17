@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="mt-4">New Game!</h2>
+  <p>Out of these 10 letters, what's the longest word you can make?</p>
+  <p><%= @letters %></p>
+  <div class="row">
+    <form action="/score" method="post" data-turbo="false" class="col-6">
+      <div class="input-group">
+        <input type="text" name="word" class="form-control">
+        <input type="submit" value="Go" class="btn btn-warning">
+      </div>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+  </div>
+</div>
